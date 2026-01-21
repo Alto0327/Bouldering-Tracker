@@ -1,8 +1,8 @@
 import { useState } from "react"
 
 export default function AddClimbForm({onAdd}){
-    const today = new Date().toISOString().slice(0, 10)
-    
+    const today = new Date().toLocaleDateString("en-CA") 
+
     const [grade, setGrade]= useState("")
     const [result, setResult]= useState("send")
     const [note, setNote]= useState("")
@@ -17,25 +17,33 @@ export default function AddClimbForm({onAdd}){
         onAdd({
             id: Date.now().toString(),
             date,
+            grade,
             result,
             note,
         })
-        setDate("")
+        setDate(today)
         setGrade("")
         setResult("send")
         setNote("")
     }
-  
+    
     return(
         <form onSubmit={handleSubmit}>
             <label>Grade:
-                <input type="text" value={grade} onChange={(e) => setGrade(e.target.value)} />
+                <select type="text" value={grade} onChange={(e) => setGrade(e.target.value)} required>
+                    <option value="" disabled>Select grade</option>
+                    <option value="G0-G1">G0-G1</option>
+                    <option value="G2-G3">G2-G3</option>
+                    <option value="G4-G5">G4-G5</option>
+                    <option value="G6-G7">G6-G7</option>
+                    <option value="G8+">G8+</option>
+                </select>   
             </label>
             <label>date:
                 <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
             </label>
             <label>Result:
-                <select name="result" id="result" value={result} onChange={(e)=> setResult(e.target.value)}>
+                <select name="result" id="result" value={result} onChange={(e)=> setResult(e.target.value)} >
                     <option value="flash">Flash</option>
                     <option value="send">Send</option>
                     <option value="attempt">Attempt</option>
