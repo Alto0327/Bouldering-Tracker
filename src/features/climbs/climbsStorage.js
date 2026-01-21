@@ -1,4 +1,4 @@
-const STORAGE_KEY ="Dev_Sample_V1"
+const STORAGE_KEY ="Dev_Sample_V2"
 
 export function loadClimbs(){
     try {
