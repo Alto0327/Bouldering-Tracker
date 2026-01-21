@@ -1,6 +1,6 @@
 import ClimbItem from "./ClimbItem"
 
-export default function SessionGroup({sessions}){
+export default function SessionGroup({session}){
     function formatDate(isoDate) {
         return new Date(isoDate).toLocaleDateString("en-US", {
             weekday: "long",
@@ -10,19 +10,12 @@ export default function SessionGroup({sessions}){
         })
     }
     
-    const sessionElement = sessions.map(session =>(
-        <div key={session.date}>
-            <h1>{formatDate(session.date)} Session</h1>
+    return(
+        <section>
+            <h1>{formatDate(session.date)}</h1>
             {session.climbs.map(climb =>
                 <ClimbItem key={climb.id} climb={climb} />
             )}
-        </div>
-        
-    ))
-    
-    return(
-        <>
-            {sessionElement}            
-        </>
+        </section>
     )
 }
