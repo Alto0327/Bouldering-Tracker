@@ -5,5 +5,5 @@
 //   date: "YYYY-MM-DD"
 //   grade: string
 //   result: "flash" | "send" | "attempt" | "fail"
-//   notes?: string
+//   note: string
 // }
