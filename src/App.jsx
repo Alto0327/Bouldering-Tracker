@@ -14,7 +14,7 @@ function App() {
   function addClimb(climb){
     setClimbs(prevClimb => [...prevClimb, climb] )
   }
-  console.log(climbs)
+
 
   return (
     <>

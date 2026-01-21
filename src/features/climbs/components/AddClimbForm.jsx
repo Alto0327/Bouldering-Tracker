@@ -1,22 +1,26 @@
 import { useState } from "react"
 
 export default function AddClimbForm({onAdd}){
+    const today = new Date().toISOString().slice(0, 10)
+    
     const [grade, setGrade]= useState("")
     const [result, setResult]= useState("send")
     const [note, setNote]= useState("")
+    const [date,setDate] = useState(today)
     
+
+
     function handleSubmit(e) {
         e.preventDefault()
         
         
         onAdd({
             id: Date.now().toString(),
-            date:new Date().toISOString().slice(0, 10),
-            grade,
+            date,
             result,
             note,
         })
-
+        setDate("")
         setGrade("")
         setResult("send")
         setNote("")
@@ -26,6 +30,9 @@ export default function AddClimbForm({onAdd}){
         <form onSubmit={handleSubmit}>
             <label>Grade:
                 <input type="text" value={grade} onChange={(e) => setGrade(e.target.value)} />
+            </label>
+            <label>date:
+                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
             </label>
             <label>Result:
                 <select name="result" id="result" value={result} onChange={(e)=> setResult(e.target.value)}>

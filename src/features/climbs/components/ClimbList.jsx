@@ -1,15 +1,13 @@
+import {sessionClimbs} from "../climbsUtils"
+import SessionGroup from "./SessionGroup"
+
 export default function ClimbList({climbs}){
 
-    const climbElement = climbs.map(climb =>{
-        return <div key={climb.id}>
-            <h1>{climb.grade}</h1>
-            <p>{climb.result}</p>
-            <p>{climb.note}</p>
-            <p>{climb.date}</p>
-            </div>
-    })
+    const sessions = sessionClimbs(climbs)
     return(
-        <div>{climbElement}</div>
-
+        <>
+            <SessionGroup sessions={sessions} />
+        </>
+        
     ) 
 }
