@@ -21,9 +21,14 @@ function App() {
       <div className="AddClimbForm">
         <AddClimbform onAdd={addClimb}/>
       </div>
-      <div className='ClimbList'>
-        <ClimbList climbs={climbs}/>
-      </div>
+      {climbs.length === 0 ? (
+        <p>No Climbs yet</p>
+      ):(
+        <div className='ClimbList'>
+          <ClimbList climbs={climbs}/>
+        </div>
+        )
+      }
     </>
   )
 }
