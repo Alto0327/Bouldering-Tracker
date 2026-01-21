@@ -1,14 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddClimbform from "./features/climbs/components/AddClimbForm" 
 import ClimbList from "./features/climbs/components/ClimbList"
 import './App.css'
+import { loadClimbs, saveClimbs } from './features/climbs/climbsStorage'
 
 function App() {
-  const [climbs, setClimbs] = useState([{id:"1", grade:"v2", result:"send"}, {id:"2",grade:"v2", result:"flash"}])
+  const [climbs, setClimbs] = useState(() => loadClimbs())
+
+  useEffect(()=>{
+    saveClimbs(climbs)
+  },[climbs])
 
   function addClimb(climb){
     setClimbs(prevClimb => [...prevClimb, climb] )
   }
+  console.log(climbs)
 
   return (
     <>

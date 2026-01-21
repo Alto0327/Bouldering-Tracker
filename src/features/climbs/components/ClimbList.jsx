@@ -1,5 +1,4 @@
 export default function ClimbList({climbs}){
-    console.log(climbs)
 
     const climbElement = climbs.map(climb =>{
         return <div key={climb.id}>
