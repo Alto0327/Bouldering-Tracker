@@ -17,6 +17,11 @@ function App() {
     setClimbs(prevClimb => [...prevClimb, climb] )
   }
 
+  const deleteClimb =(id)=> {
+    setClimbs(prev => prev.filter(climb => climb.id !== id))
+  }
+
+
   return (
     <>
       <div className="AddClimbForm">
@@ -29,7 +34,7 @@ function App() {
         <p>No Climbs yet</p>
       ):(
         <div className='ClimbList'>
-          <ClimbList climbs={climbs} filters={filters}/>
+          <ClimbList climbs={climbs} filters={filters} onDeleteClimb={deleteClimb}/>
         </div>
         )
       }
