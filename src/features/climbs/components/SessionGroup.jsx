@@ -1,6 +1,6 @@
 import ClimbItem from "./ClimbItem"
 
-export default function SessionGroup({session, onDeleteClimb}){
+export default function SessionGroup({session, onDeleteClimb, onUpdateClimb}){
     function parseLocalDate(ymd) {
         const [y, m, d] = ymd.split("-").map(Number)
         return new Date(y, m - 1, d)
@@ -19,7 +19,7 @@ export default function SessionGroup({session, onDeleteClimb}){
         <section className="session-group">
             <h1 className="session-group__Date">{formatDate(session.date)}</h1>
             {session.climbs.map(climb =>
-                <ClimbItem key={climb.id} climb={climb} onDeleteClimb={onDeleteClimb}/>
+                <ClimbItem key={climb.id} climb={climb} onUpdateClimb={onUpdateClimb} onDeleteClimb={onDeleteClimb}/>
             )}
         </section>
     )

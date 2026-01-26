@@ -21,6 +21,16 @@ function App() {
     setClimbs(prev => prev.filter(climb => climb.id !== id))
   }
 
+  const updateClimb =(id, patch)=> {
+    setClimbs(prev => 
+      prev.map(climb =>
+        climb.id === id
+        ? {...climb, ...patch}
+        : climb
+      )
+    )
+  }
+
 
   return (
     <>
@@ -34,7 +44,7 @@ function App() {
         <p>No Climbs yet</p>
       ):(
         <div className='ClimbList'>
-          <ClimbList climbs={climbs} filters={filters} onDeleteClimb={deleteClimb}/>
+          <ClimbList climbs={climbs} filters={filters} onUpdateClimb={updateClimb} onDeleteClimb={deleteClimb}/>
         </div>
         )
       }
