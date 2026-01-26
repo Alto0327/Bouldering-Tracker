@@ -1,13 +1,27 @@
 import { useEffect, useState } from 'react'
+import Modal from 'react-modal';
 import AddClimbform from "./features/climbs/components/AddClimbForm" 
 import ClimbList from "./features/climbs/components/ClimbList"
 import './App.css'
 import { loadClimbs, saveClimbs } from './features/climbs/climbsStorage'
 import Filters from './features/climbs/components/Filters'
 
+Modal.setAppElement('#root')
+
 function App() {
   const [climbs, setClimbs] = useState(() => loadClimbs())
   const [filters,setFilters ] = useState({grade:"", result:""})
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   useEffect(()=>{
     saveClimbs(climbs)
@@ -35,7 +49,15 @@ function App() {
   return (
     <>
       <div className="AddClimbForm">
-        <AddClimbform onAdd={addClimb}/>
+        <button onClick={openModal}>Add Form</button>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Example Modal"
+        >
+
+          <AddClimbform closeModal={closeModal} onAdd={addClimb}/>
+        </Modal>
       </div>
       <Filters 
         filters={filters} setFilters={setFilters}

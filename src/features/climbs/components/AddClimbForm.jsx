@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function AddClimbForm({onAdd}){
+export default function AddClimbForm({onAdd , closeModal}){
     const today = new Date().toLocaleDateString("en-CA") 
 
     const [grade, setGrade]= useState("")
@@ -25,10 +25,12 @@ export default function AddClimbForm({onAdd}){
         setGrade("")
         setResult("send")
         setNote("")
+        closeModal()
     }
     
     return(
         <form onSubmit={handleSubmit}>
+            <button type="button" onClick={closeModal}>Close</button>
             <label>Grade:
                 <select type="text" value={grade} onChange={(e) => setGrade(e.target.value)} required>
                     <option value="" disabled>Select grade</option>
