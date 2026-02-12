@@ -1,18 +1,52 @@
-# React + Vite
+# 🧗 Bouldering Log Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React app I built to track my own bouldering sessions.
 
-Currently, two official plugins are available:
+This project focuses on clean state management, component structure, filtering logic, and local storage persistence. It is the current MVP of a larger climbing performance tracker that I plan to expand over time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Add climbs using a modal form  
+- Edit climbs inline  
+- Delete climbs  
+- Filter by grade and result  
+- Automatically group climbs by session date  
+- Data saved to `localStorage`  
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 🛠 Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React  
+- React Hooks  
+- react-modal  
+- localStorage  
+- CSS (BEM-style class structure)  
+
+---
+
+## 🎯 Why I Built This
+
+I built this project to:
+
+- Track and review my own climbing sessions  
+- Practice real-world CRUD patterns  
+- Improve frontend architecture and state flow  
+- Work with derived data (filtering + grouping logic)  
+
+---
+
+## 🔮 Future Improvements
+
+This is the MVP version. Planned improvements include:
+
+- Session statistics (send rate, totals, performance trends)  
+- Dashboard view  
+- Dark mode  
+- Backend integration  
+- User accounts  
+- Mobile-first refinements  
+
+---
