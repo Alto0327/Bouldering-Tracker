@@ -5,6 +5,7 @@ export default function ClimbItem({climb , onDeleteClimb , onUpdateClimb}){
     const [draftNote, setDraftNote]= useState("")
     const [draftGrade, setDraftGrade]= useState("")
     const [draftResult, setDraftResult]= useState("")
+    const [draftDate, setDraftDate] =useState("")
 
     function handleCancel(){setIsEditing(false)}
 
@@ -13,13 +14,14 @@ export default function ClimbItem({climb , onDeleteClimb , onUpdateClimb}){
         setDraftNote(climb.note ?? "")
         setDraftGrade(climb.grade)
         setDraftResult(climb.result)
+        setDraftDate(climb.date)
     }
 
     return (
-        <>
-
+        <div className="climb-item"> 
             {isEditing === true ?
-                <div>
+                <div className="climb-item__container editing-container">
+                    <div className="climb-item__fields"></div>
                     <select type="text" value={draftGrade} onChange={(e) => setDraftGrade(e.target.value)} required>
                         <option value="G0-G1">G0-G1</option>
                         <option value="G2-G3">G2-G3</option>
@@ -34,28 +36,34 @@ export default function ClimbItem({climb , onDeleteClimb , onUpdateClimb}){
                         <option value="fail">Fail</option>
                     </select>
                     <input type="text" value={draftNote} onChange={(e) => setDraftNote(e.target.value)}/>                    
-                    <button onClick={() => {
-                                onUpdateClimb(climb.id,{
-                                    grade:draftGrade,
-                                    result:draftResult,
-                                    note:draftNote
-                                })
-                                setIsEditing(false)
-                            }}
-                    >
-                        Save
-                    </button>
-                    <button onClick={handleCancel}>Cancel</button>
+                    <input type="date" value={draftDate} onChange={(e) => setDraftDate(e.target.value)}/>
+                    <div className="climb-item__actions">
+                        <button onClick={() => {
+                            onUpdateClimb(climb.id,{
+                                grade:draftGrade,
+                                result:draftResult,
+                                note:draftNote,
+                                date:draftDate
+                            })
+                            setIsEditing(false)
+                        }}
+                        >
+                            Save
+                        </button>
+                        <button onClick={handleCancel}>Cancel</button>
+                    </div>
                 </div>
             : 
-            <div>
-                    <h2>{climb.grade}</h2>
-                    <p>{climb.result}</p>
-                    <p>{climb.note}</p>
-                    <button onClick={()=> onDeleteClimb(climb.id)}>Delete</button>
-                    <button onClick={()=> handleEdit()}>Edit Climb</button>
+                <div className="climb-item__container">
+                    <h2 className="climb-item__grade">{climb.grade}</h2>
+                    <p className="climb-item__result">{climb.result}</p>
+                    <p className="climb-item__note">{climb.note}</p>
+                    <div className="climb-item__btnContainer">
+                        <button className="climb-item__Btn" onClick={()=> onDeleteClimb(climb.id)}>Delete</button>
+                        <button className="climb-item__Btn" onClick={()=> handleEdit()}>Edit Climb</button>
+                    </div>
                 </div>
             }
-        </>
+        </div>
     )
 }
