@@ -7,7 +7,7 @@ export default function ClimbsHeader({ onOpenAdd, filters, setFilters }) {
         <h1 className="climbs-header__title">Bouldering Tracker</h1>
 
         <button type="button" className="climbs-header__add-btn" onClick={onOpenAdd}>
-          Add Climb
+         + Add Project
         </button>
       </div>
 

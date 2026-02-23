@@ -7,13 +7,13 @@ export default function Filters({filters, setFilters}){
     
     return(
         <div className="filter">
-            <div className="filter__actions">
+            <div className="filter__option">
                 <select 
                     value={filters.grade}
                     onChange={(e) =>
                         setFilters(prev => ({ ...prev, grade: e.target.value }))
                     }>
-                    <option value="" disabled>Select grade</option>
+                    <option value="" disabled>Grade</option>
                     <option value="G0-G1">G0-G1</option>
                     <option value="G2-G3">G2-G3</option>
                     <option value="G4-G5">G4-G5</option>
@@ -31,11 +31,13 @@ export default function Filters({filters, setFilters}){
                         <option value="attempt">Attempt</option>
                         <option value="fail">Fail</option>
                     </select>
-                    {hasActiveFilter ? (
-                        <button type="button" onClick={clearFilters}>
-                            Clear filters
-                        </button>
-                    ) : null}
+            </div>
+            <div className="filter__clear-option">
+                {hasActiveFilter ? (
+                    <button type="button" onClick={clearFilters}>
+                        Clear Filter
+                    </button>
+                ) : null}
             </div>
         </div>
     )

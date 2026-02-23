@@ -1,7 +1,82 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root{
+  --black:#1F2937;
+  --lightGray:#F9FAFB;
+  --darkGray:#D1D5DB;
 }
 
+.climbs-page{
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.climbs-header{
+  width: 100%;
+  position:sticky;
+  top: 0;
+}
+
+.climbs-header__top{
+  display: flex;
+  align-items: center;
+  margin:1em 0px;
+  justify-content: space-between;
+  padding-left: 6px;
+  padding-right: 24px;
+  width: 100%;
+  border-bottom: 2px solid var(--darkGray);
+  
+}
+
+.climbs-header__title{
+  font-size: 1.3em;
+}
+
+.climbs-header__add-btn{
+  height: 2rem;
+  width: 7rem;
+
+  background-color: var(--black);
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.climbs-header__filter{
+  border-bottom: 2px solid var(--darkGray);
+}
+
+.filter{
+  margin:1em 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding-left: .5em
+}
+
+
+.filter__option{
+  display: flex;
+  gap: 1em;
+}
+
+.filter__option select{
+  text-align: center;
+  padding: .7em 1em;
+  background-color: var(--darkGray);
+  border: none;
+  border-radius: 10px;
+}
+
+.filter__clear-option button{
+  text-align: center;
+  color: white;
+  padding:.7em 1em;
+  font-weight: bold;
+  background-color: var(--black);
+  border: none;
+  border-radius: 10px;
+}

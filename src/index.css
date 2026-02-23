@@ -1,3 +1,8 @@
+*{
+  box-sizing: border-box;
+  padding: 0px;
+}
+
 :root {
   font-family: "Space Grotesk", sans-serif;
 
@@ -10,9 +15,7 @@
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 
