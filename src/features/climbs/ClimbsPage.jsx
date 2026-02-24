@@ -52,7 +52,8 @@ export default function ClimbsPage() {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        contentLabel="Add Climb"
+        contentLabel="Add New Project"
+        className="Modal"
       >
         <AddClimbForm onAdd={addClimb} closeModal={closeModal} />
       </Modal>

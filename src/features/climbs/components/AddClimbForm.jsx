@@ -31,8 +31,8 @@ export default function AddClimbForm({onAdd , closeModal}){
     return(
         <form onSubmit={handleSubmit} className="climb-form">
             <div className="climb-form__header">
-                <h2>Add Climb</h2>
-                <button type="button" onClick={closeModal}>Close</button>
+                <h2>Add New Project</h2>
+                <button type="button" onClick={closeModal}>X</button>
             </div>
             <div className="climb-form__fields">
                 <label>Grade:
@@ -57,7 +57,7 @@ export default function AddClimbForm({onAdd , closeModal}){
                     </select>
                 </label>
                 <label>Notes
-                    <input type="text" value={note} onChange={(e) => setNote(e.target.value)} placeholder="Notes about climb"/>
+                    <textarea type="text" value={note} onChange={(e) => setNote(e.target.value)} placeholder="About Climb"/>
                 </label>
             </div>
             <div className="climb-form__actions">
