@@ -68,7 +68,9 @@ export default function ClimbItem({climb , onDeleteClimb , onUpdateClimb}){
                         <button className="climb-item__Btn" onClick={()=> handleEdit()}>Edit Climb</button>
                     </div>
                     </div>
-                    <p className="climb-item__result">{climb.result}</p>
+                    <p className={`climb-item__result climb-item__result--${climb.result}`}>
+                        {climb.result[0].toUpperCase() + climb.result.slice(1)}
+                    </p>
                 </div>
             }
         </div>

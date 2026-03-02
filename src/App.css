@@ -191,3 +191,34 @@
   text-align: center;
   border-radius: 10px;
 }
+
+.climb-item__result {
+  padding: 4px;
+  text-align: center;
+  border-radius: 999px;
+  font-weight: 600;
+
+  display: inline-flex;
+  align-items: center;      
+  justify-content: center;  
+}
+
+/* state modifiers */
+.climb-item__result--flash   { background: #d1fae5; color: #065f46; }
+.climb-item__result--send    { background: #dbeafe; color: #1e40af; }
+.climb-item__result--fail    { background: #fee2e2; color: #991b1b; }
+.climb-item__result--attempt { background: #e5e7eb; color: #111827; }
+.climb-item__result--project { background: #fef3c7; color: #92400e; }
+
+.climb-item__btnContainer{
+  display: flex;
+  gap: 1em;
+}
+
+.climb-item__Btn{
+  text-align: center;
+  padding: .2em .5em;
+  background-color: var(--darkGray);
+  border: none;
+  border-radius: 2px;
+}
