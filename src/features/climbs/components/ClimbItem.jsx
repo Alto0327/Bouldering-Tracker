@@ -34,6 +34,7 @@ export default function ClimbItem({climb , onDeleteClimb , onUpdateClimb}){
                         <option value="send">Send</option>
                         <option value="attempt">Attempt</option>
                         <option value="fail">Fail</option>
+                        <option value="project">Project</option>
                     </select>
                     <input type="text" value={draftNote} onChange={(e) => setDraftNote(e.target.value)}/>                    
                     <input type="date" value={draftDate} onChange={(e) => setDraftDate(e.target.value)}/>
@@ -55,13 +56,19 @@ export default function ClimbItem({climb , onDeleteClimb , onUpdateClimb}){
                 </div>
             : 
                 <div className="climb-item__container">
-                    <h2 className="climb-item__grade">{climb.grade}</h2>
-                    <p className="climb-item__result">{climb.result}</p>
-                    <p className="climb-item__note">{climb.note}</p>
+                    
+                    <div className="climb-item__grade">
+                        <h2 >{climb.grade}</h2>
+                    </div>
+                    <div className="climb-item__note">
+
+                    <p >{climb.note}</p>
                     <div className="climb-item__btnContainer">
                         <button className="climb-item__Btn" onClick={()=> onDeleteClimb(climb.id)}>Delete</button>
                         <button className="climb-item__Btn" onClick={()=> handleEdit()}>Edit Climb</button>
                     </div>
+                    </div>
+                    <p className="climb-item__result">{climb.result}</p>
                 </div>
             }
         </div>

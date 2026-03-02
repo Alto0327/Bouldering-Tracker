@@ -30,6 +30,7 @@ export default function Filters({filters, setFilters}){
                         <option value="send">Send</option>
                         <option value="attempt">Attempt</option>
                         <option value="fail">Fail</option>
+                        <option value="project">Project</option>
                     </select>
             </div>
             <div className="filter__clear-option">

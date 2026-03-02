@@ -11,9 +11,9 @@ export default function ClimbList({climbs, filters, onDeleteClimb,onUpdateClimb}
     ))
 
     return(
-        <>
+        <div className="session-container">
             {sessionsElement}
-        </>
+        </div>
         
     ) 
 }

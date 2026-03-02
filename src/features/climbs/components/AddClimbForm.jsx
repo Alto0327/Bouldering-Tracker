@@ -54,6 +54,7 @@ export default function AddClimbForm({onAdd , closeModal}){
                         <option value="send">Send</option>
                         <option value="attempt">Attempt</option>
                         <option value="fail">Fail</option>
+                        <option value="project">Project</option>
                     </select>
                 </label>
                 <label>Notes

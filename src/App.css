@@ -151,3 +151,43 @@
 .climb-form__fields textarea {
   min-height: 4rem;
 }
+
+/* Session Groups */
+.session-container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.session-group{
+  border: 2px solid var(--darkGray);
+  border-radius: 10px;
+}
+
+.session-group__Date{
+  background-color: var(--darkGray);
+  margin: auto;
+  padding:.5em .5em .5em;
+}
+
+/* climb-item */
+
+.climb-item__container{
+  display: grid;
+  grid-template-columns: 1fr 35vw 1fr; /* middle bigger */
+  gap: 16px;
+  padding: 1em 1em ;
+  border: 1px solid var(--darkGray);
+}
+
+.climb-item__grade{
+  width: 6em;
+  height: 4em;
+  background-color: var(--black);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
